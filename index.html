@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valeur Consultoria — Diagnóstico comercial gratuito para empresas com time de vendas que não converte como deveria.">
+  <title>Valeur Consultoria — Estruturação Comercial</title>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:#FAFAF8;color:#1a1a18;
+      line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden
+    }
+    .site-header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      height:60px;padding:0 32px;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(250,250,248,0.92);backdrop-filter:blur(10px);
+      border-bottom:1px solid #E8E5DF
+    }
+    .logo-area{display:flex;align-items:center;gap:9px}
+    .logo-name{font-family:Georgia,serif;font-size:1.15rem;font-weight:700;color:#1a1a18;letter-spacing:0.03em}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-area">
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <path d="M20 34L6 10h5l9 16 9-16h5L20 34z" fill="#1B4D3E" opacity="0.9"/>
+      <path d="M20 28L9 12h4l7 12 7-12h4L20 28z" fill="#1B4D3E" opacity="0.55"/>
+      <path d="M20 22L12 12h4l4 8 4-8h4L20 22z" fill="#1B4D3E" opacity="0.25"/>
+    </svg>
+    <span class="logo-name">Valeur</span>
+  </div>
+  <nav class="header-nav">
+    <a href="#pains">Para quem é</a>
+    <a href="#metodo">Método</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a href="#form-section" class="header-cta">Aplicar agora</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero-section" id="hero">
+    <div class="hero-left">
+      <span class="eyebrow">● Estruturação Comercial · R$75k–R$5M+/mês</span>
+      <h1 id="hero-headline">Seu time vende.<br><em>Mas só você fecha.</em></h1>
+      <p class="hero-sub">Você tem vendedores, gera lead e investe em tráfego. O problema não é falta de oportunidade — é falta de processo. Em um diagnóstico 1:1, identificamos onde sua operação está travada e o que precisa ser feito.</p>
+
+      <div class="hero-badges">
+        <span>✓ Diagnóstico gratuito</span>
+        <span>✓ Resposta em até 4h</span>
+        <span>✓ Sem compromisso</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><strong>200+</strong><span>projetos estruturados</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>6 meses</strong><span>de implementação</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>3 fases</strong><span>validadas</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right" id="form-section">
+      <div class="form-card" id="form-card">
+        <div class="form-card-header">
+          <p class="form-card-label">DIAGNÓSTICO GRATUITO</p>
+          <h2>Veja se sua empresa se qualifica</h2>
+          <p class="form-card-sub">~2 minutos · Sem compromisso</p>
+        </div>
+
+        <div id="funnel-progress" hidden>
+          <div class="progress-meta">
+            <span id="progress-text"></span>
+            <span id="progress-pct"></span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <div id="funnel-container">
+          <div class="loading-state">
+            <div class="spinner" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS CLIENTES -->
+  <section class="logos-section" aria-label="Segmentos atendidos">
+    <p class="logos-label">Empresas atendidas em</p>
+    <div class="logos-track">
+      <div class="logos-inner">
+        <span>Telecom</span><span>Indústria</span><span>Agências</span>
+        <span>Solar</span><span>Consultorias</span><span>SaaS</span>
+        <span>Saúde</span><span>Imobiliário</span>
+        <span>Telecom</span><span>Indústria</span><span>Agências</span>
+        <span>Solar</span><span>Consultorias</span><span>SaaS</span>
+        <span>Saúde</span><span>Imobiliário</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DORES -->
+  <section class="pains-section" id="pains">
+    <div class="container">
+      <p class="section-label">Você se reconhece?</p>
+      <h2>Essas frases soam familiares?</h2>
+      <p class="section-sub">São as mesmas que ouvimos de donos que hoje são nossos clientes — antes de estruturar o processo.</p>
+
+      <div class="pains-grid">
+        <div class="pain-card">
+          <div class="pain-icon">01</div>
+          <h3>Meu time não fecha. Só eu fecho.</h3>
+          <p>Você é o único vendedor que realmente converte. O time gera atividade mas não fecha sem você.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">02</div>
+          <h3>Contratei vendedor bom. Não deu resultado.</h3>
+          <p>Talento sem processo não escala. O problema não era o vendedor — era a falta de estrutura.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">03</div>
+          <h3>Gasto com anúncio. O retorno é fraco.</h3>
+          <p>Lead chega, mas o time não converte. O gargalo não é o tráfego — é o que acontece depois.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">04</div>
+          <h3>Cresci, mas virou bagunça.</h3>
+          <p>Cada vendedor trabalha do seu jeito. Sem processo replicável, crescer só multiplica o caos.</p>
+        </div>
+      </div>
+
+      <div class="pains-cta">
+        <a href="#form-section" class="btn-primary">Quero meu diagnóstico gratuito</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="metodo-section" id="metodo">
+    <div class="container">
+      <p class="section-label">Metodologia</p>
+      <h2>Não é consultoria. É implementação.</h2>
+      <p class="section-sub">A maioria das consultorias entrega um diagnóstico e some. A Valeur fica do mapeamento até a execução — com você, dentro da sua operação.</p>
+
+      <div class="metodo-steps">
+        <div class="metodo-step">
+          <div class="metodo-num">01</div>
+          <div>
+            <h3>Auditoria Comercial</h3>
+            <p>Mapeamos onde está o gargalo real: processo, time, discurso ou gestão. Sem achismo, sem PowerPoint vazio.</p>
+          </div>
+        </div>
+        <div class="metodo-connector" aria-hidden="true"></div>
+        <div class="metodo-step">
+          <div class="metodo-num">02</div>
+          <div>
+            <h3>Planejamento Tático</h3>
+            <p>Desenhamos o processo comercial do zero, calibrado para o seu segmento, ciclo de venda e perfil de cliente.</p>
+          </div>
+        </div>
+        <div class="metodo-connector" aria-hidden="true"></div>
+        <div class="metodo-step">
+          <div class="metodo-num">03</div>
+          <div>
+            <h3>Implementação</h3>
+            <p>Colocamos em prática junto com seu time — treinamento, indicadores e acompanhamento durante os 6 meses.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="metodo-cta">
+        <a href="#form-section" class="btn-primary">Quero meu diagnóstico gratuito</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFICAÇÃO (para quem é / não é) -->
+  <section class="qualificacao-section">
+    <div class="container">
+      <p class="section-label">Seja direto</p>
+      <h2>Esse diagnóstico não é para qualquer um.</h2>
+
+      <div class="qual-grid">
+        <div class="qual-col qual-yes">
+          <h3>✓ É para você se</h3>
+          <ul>
+            <li>Fatura R$75k+/mês de forma consistente</li>
+            <li>Tem 2 ou mais vendedores ativos</li>
+            <li>Investe em tráfego pago ou já gera lead</li>
+            <li>Quer processo, não só mais um treinamento</li>
+            <li>Está disposto a implementar, não só ouvir</li>
+          </ul>
+        </div>
+        <div class="qual-col qual-no">
+          <h3>✗ Não é para você se</h3>
+          <ul>
+            <li>Fatura menos de R$75k/mês</li>
+            <li>Ainda vende sozinho, sem time formado</li>
+            <li>Quer alguém que faça tudo no seu lugar</li>
+            <li>Está só pesquisando, sem intenção de agir</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qual-cta">
+        <a href="#form-section" class="btn-primary">Quero meu diagnóstico gratuito</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container container--narrow">
+      <p class="section-label">Dúvidas</p>
+      <h2>Antes de aplicar</h2>
+
+      <div id="faq-list" class="faq-list"></div>
+
+      <div class="faq-cta">
+        <a href="#form-section" class="btn-primary">Quero meu diagnóstico gratuito</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta-section">
+    <div class="container container--narrow" style="text-align:center">
+      <p class="section-label">Aplique agora</p>
+      <h2>Pronto para estruturar seu comercial?</h2>
+      <p class="section-sub" style="max-width:480px;margin:0 auto 32px">Diagnóstico 1:1 com um especialista da Valeur. Gratuito, sem compromisso. Cada semana atendemos um número limitado de empresas.</p>
+      <a href="#form-section" class="btn-primary btn-large">Quero meu diagnóstico gratuito →</a>
+      <p class="final-badges">🔒 Dados protegidos · LGPD &nbsp;⚡ Resposta em até 4h &nbsp;🎯 Diagnóstico 1:1</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="logo-area">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 34L6 10h5l9 16 9-16h5L20 34z" fill="#1B4D3E" opacity="0.9"/>
+          <path d="M20 28L9 12h4l7 12 7-12h4L20 28z" fill="#1B4D3E" opacity="0.55"/>
+        </svg>
+        <span class="logo-name" style="font-size:1rem">Valeur Consultoria</span>
+      </div>
+      <p>© 2025 Valeur Consultoria · <a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- CTA MOBILE FIXO -->
+<div class="mobile-cta-bar">
+  <button id="fixed-cta" type="button">Quero meu diagnóstico gratuito →</button>
+</div>
+
+<script type="module" src="app.js" defer></script>
+</body>
+</html>
